@@ -21,6 +21,10 @@ nav a {
   color: #FFEDDA;
 }
 
+nav a:hover{
+  color: white;
+}
+
 nav > a {
   font-size: 2rem;
   font-family: 'League Gothic', sans-serif;
