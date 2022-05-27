@@ -47,3 +47,17 @@
     filter: brightness(1);
   }
 }
+
+@media screen and (max-width: 800px) {
+  #hero img{
+    display: none;
+  }
+  #right-hero {
+    flex-basis: 100%;
+    text-align: center;
+    padding: 1rem 1rem;
+  }
+  #right-hero h1 {
+    font-size: 1.5rem;
+  }
+}

@@ -6,6 +6,7 @@
 
 a {
   text-decoration: none;
+  color: #FFEDDA;
 }
 
 nav {
@@ -41,11 +42,11 @@ nav > a {
 }
 
 .nav-right > * {
-  font-size: 1.08rem;
+  font-size: 1rem;
   margin: 1.75rem;
   font-family: 'Noto Sans', sans-serif;
   font-weight: 400;
-  padding: .7rem .5rem;
+  padding: .7rem 0;
   letter-spacing: 1px;
 }
 
@@ -53,9 +54,33 @@ nav > a {
   display: none;
 }
 
-main {
-  height: 100vh;
-  border: #3DB2FF 3px solid;
+#hero {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: max-content;
   background-color: #3DB2FF;
+  border: #3DB2FF 3px solid;
+  padding: 3rem 0;
 }
 
+#right-hero {
+  flex-basis: 50%;
+  padding: 4rem 1rem;
+  align-self: flex-start;
+}
+
+#right-hero h1 {
+  font-family: 'Quicksand', sans-serif;
+  color: #FFEDDA;
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+#right-hero a {
+  color: #FFEDDA;
+  border: 1px solid #FFEDDA;
+  padding: .6rem;
+  font-family: 'Noto Sans', sans-serif;
+}
