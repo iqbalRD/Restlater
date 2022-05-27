@@ -3,6 +3,7 @@
 
 ## Contributors
 1. Dhafa Defrita Rama Yudistra (ASTRSM)
+2. Alviano Dwitiya Nareswara (Adwtiyan)
 
 
 Install all the packages/dependencies first
