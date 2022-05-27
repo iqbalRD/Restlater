@@ -19,6 +19,7 @@ nav {
 
 nav a {
   color: #FFEDDA;
+  transition: filter .2s ease-in;
 }
 
 nav a:hover{
@@ -43,6 +44,10 @@ nav > a {
 
 .home-logo img {
   display: none;
+}
+
+nav a:hover {
+  filter: opacity(.5);
 }
 
 .nav-right > * {
@@ -87,4 +92,10 @@ nav > a {
   border: 1px solid #FFEDDA;
   padding: .6rem;
   font-family: 'Noto Sans', sans-serif;
+  transition: all .2s ease-in-out;
+}
+
+#right-hero a:hover {
+  background-color: #FFEDDA;
+  color: #3DB2FF;
 }
