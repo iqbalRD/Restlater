@@ -1,3 +1,5 @@
+import grave from '../../data/grave-test'
+
 const home = {
   render () {
     return `
@@ -7,7 +9,7 @@ const home = {
         <h1>
           Prepare yourself and your family for the things that will surely come to human life
         </h1>
-        <a href='#blok'>
+        <a href="javascript:;" onclick="document.location.hash='blok';">
           RESERVE NOW
         </a>
       </div>
@@ -39,8 +41,55 @@ const home = {
         </div>
       </div>
     </section>
+    <section id='blok'>
+      <div class='section-title'>
+        <h2>Reserve Your Future Home Now</h2>
+      </div>
+      <div id='blok-content'>
+      </div>
+    </section>
+    <section id='contact'>
+      <div class='triangle'></div>
+      <div class='contact-content'>
+        <h3>
+          If it's urgent you can contact us in <br>+621-231-241-512
+        </h3>
+        <h4>
+          If not, you can email us everything you want to know in <span>123@gmail.com</span>
+        </h4>
+      </div>
+    </section>
     `
+  },
+
+  afterRender () {
+    Object.keys(grave).forEach(key => {
+      const initial = getInitial(key)
+      const all = grave[key].length
+      const unavailable = getUnavailable(grave[key])
+      $('#blok-content').append(`
+        <div class='blok-item' id='${key}'>
+          <h3>BLOK ${initial}</h3>
+          <h4>${unavailable}/${all}</h4>
+          <p>AVAILABLE SLOTS</p>
+          <div class='progress'>
+            <div class='progress-bar' style='width: ${unavailable / all * 100}%'></div>
+          </div>
+        </div>
+      `)
+    })
   }
+}
+
+const getUnavailable = (slots) => {
+  return slots.filter(item => item.available === false).length
+}
+
+const getInitial = (text) => {
+  text = text.split('')
+  text = text.slice(4)
+  text = text.join('')
+  return text
 }
 
 export default home
