@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
 a {
   text-decoration: none;
   color: #FFEDDA;
@@ -94,4 +98,41 @@ nav a:hover {
 #right-hero a:hover {
   background-color: #FFEDDA;
   color: #3DB2FF;
+}
+
+#reason {
+  margin: 3rem;
+  text-align: center;
+}
+
+.section-title {
+  color: #FF2442;
+  width: max-content;
+  margin: 0 auto;
+  padding: .5rem 0;
+  border-bottom: #FF2442 2px dotted;
+}
+
+#reason-content {
+  margin: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 2rem;
+}
+
+.reason-item {
+  background-color: #3DB2FF;
+  padding: 4rem 2rem;
+  margin: 0 1rem;
+  border-radius: 10px;
+  width: 260px;
+  color:#FFEDDA;
+}
+
+.reason-item *:first-child {
+  margin-bottom: 1.5rem;
+}
+
+.reason-item *:nth-child(2) {
+  margin-bottom: .5rem;
 }
