@@ -1,6 +1,6 @@
 # Restlater
 **A website to reserve a grave slot for your future use**
-
+<br>
 ## Contributors
 1. Dhafa Defrita Rama Yudistra (ASTRSM)
 2. Alviano Dwitiya Nareswara (Adwtiyan)
