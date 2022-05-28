@@ -1,0 +1,89 @@
+@media screen and (max-width: 570px) {
+  nav {
+    justify-content: center;
+  }
+  .nav-right {
+    position: absolute;
+    height: fit-content;
+    background-color: #3DB2FF;
+    top: 0;
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    align-items: center;
+    z-index: 1;
+    text-align: center;
+    padding: 1rem;
+    transition: transform .3s ease-in-out;
+    transform: translateY(-100%);
+  }
+  .hamburger-active {
+    transform: translateY(0);
+  }
+  .disable-main {
+    filter: brightness(0.5);
+  }
+  .nav-right > * {
+    margin: 0;
+    width: 100%;
+  }
+  .home-logo > * {
+    margin: .15em;
+  }
+  .home-logo img {
+    display: block;
+  }
+  #hamburger {
+    display: block;
+    position: absolute;
+    right: 0;
+    font-size: 2rem;
+  }
+  #hamburger a {
+    padding: .5rem .8rem;
+  }
+  main {
+    transition: filter .3s ease-in-out;
+    filter: brightness(1);
+  }
+  .section-title {
+    width: 100%;
+  }
+  #reason, #blok {
+    margin: 3rem 1rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #hero img{
+    display: none;
+  }
+  #right-hero {
+    flex-basis: 100%;
+    text-align: center;
+    padding: 1rem 1rem;
+  }
+  #right-hero h1 {
+    font-size: 1.5rem;
+  }
+  .blok-item:last-child {
+    grid-column-end: auto;
+  }
+  #contact {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  .contact-content {
+    margin: 1rem;
+  }
+  .contact-content h3 {
+    font-size: 1.5rem;
+  }
+  .contact-content h4 {
+    font-size: 1rem;
+  }
+  .triangle {
+    border-width: 173.2px 100px 0 100px;
+  }
+}
