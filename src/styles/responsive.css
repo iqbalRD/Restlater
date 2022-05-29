@@ -46,6 +46,12 @@
     transition: filter .3s ease-in-out;
     filter: brightness(1);
   }
+  .section-title {
+    width: 100%;
+  }
+  #reason, #blok {
+    margin: 3rem 1rem;
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -59,5 +65,25 @@
   }
   #right-hero h1 {
     font-size: 1.5rem;
+  }
+  .blok-item:last-child {
+    grid-column-end: auto;
+  }
+  #contact {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  .contact-content {
+    margin: 1rem;
+  }
+  .contact-content h3 {
+    font-size: 1.5rem;
+  }
+  .contact-content h4 {
+    font-size: 1rem;
+  }
+  .triangle {
+    border-width: 173.2px 100px 0 100px;
   }
 }
