@@ -246,4 +246,104 @@ nav a:hover {
 footer {
   text-align: center;
   font-size: 10px;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 10px;
 }
+
+/* ================= BLOK ================= */
+
+#blok-container {
+  margin: 1rem;
+}
+
+#blok-container h1 {
+  font-family: 'noto sans', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 200;
+  margin-bottom: 2rem;
+}
+
+#slot-indication * {
+  font-weight: 500;
+  font-size: .7rem;
+  color: white;
+  padding: .3rem 1.3rem;
+  margin-right: .5rem;
+  border-radius: 10px;
+  letter-spacing: .5px;
+}
+
+#slot-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 4rem auto;
+  color: white;
+  font-weight: 600;
+  gap: 1rem;
+  margin: 3rem 10rem;
+}
+
+.slot {
+  width: 45px;
+  height: 45px;
+  display: grid;
+  place-items: center;
+  transition: transform .1s, filter .1s;
+}
+
+.available:hover {
+  filter: drop-shadow(0 6px 2px #00000022);
+  transform: translateY(-5px);
+}
+
+.available {
+  background-color: #3DB2FF;
+}
+
+.selected {
+  background-color: #FFB830;
+}
+
+.reserved {
+  background-color: #FF2442;
+}
+
+#slot-confirm {
+  font-family: 'noto sans', sans-serif;
+  text-align: center;
+  margin: 5rem 10rem 3rem 10rem;
+  box-shadow: 0px 4px 7px 3px rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+#slot-confirm h2 {
+  font-size: 1.2rem;
+  font-weight: 200;
+}
+
+#slot-confirm h3 {
+  font-size: 1.5rem;
+  color: #3DB2FF;
+  font-weight: 700;
+  margin-bottom: .3rem;
+}
+
+#confirm-button {
+  color: white;
+  border: none;
+  padding: .5rem 1rem;
+  width: 100%;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: all .2s ease-in-out;
+}
+
+
+
+
+

@@ -1,4 +1,5 @@
 import grave from '../../data/grave-test'
+import getInitial from '../../utils/get-blok-initial'
 
 const home = {
   render () {
@@ -59,6 +60,9 @@ const home = {
         </h4>
       </div>
     </section>
+    <footer>
+    @Copyright 2022, Restlater Corporation
+    </footer>
     `
   },
 
@@ -68,7 +72,7 @@ const home = {
       const all = grave[key].length
       const unavailable = getUnavailable(grave[key])
       $('#blok-content').append(`
-        <div class='blok-item' id='${key}'>
+        <div class='blok-item' id='${key}' tabindex='0'>
           <h3>BLOK ${initial}</h3>
           <h4>${unavailable}/${all}</h4>
           <p>AVAILABLE SLOTS</p>
@@ -78,18 +82,23 @@ const home = {
         </div>
       `)
     })
+
+    $('.blok-item').click((e) => {
+      const id = e.currentTarget.id
+      document.location.hash = `#/blok/${id}`
+    })
+
+    $('.blok-item').on('keydown', (e) => {
+      if (e.keyCode === 13) {
+        const id = e.currentTarget.id
+        document.location.hash = `#/blok/${id}`
+      }
+    })
   }
 }
 
 const getUnavailable = (slots) => {
   return slots.filter(item => item.available === false).length
-}
-
-const getInitial = (text) => {
-  text = text.split('')
-  text = text.slice(4)
-  text = text.join('')
-  return text
 }
 
 export default home
