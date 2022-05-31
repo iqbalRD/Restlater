@@ -1,7 +1,7 @@
 import grave from '../../data/grave-test'
 import UrlParser from '../../routes/url-parser'
 import getInitial from '../../utils/get-blok-initial'
-import { getVariables } from './payment'
+import { getPaymentDetail } from './payment'
 
 const blok = {
   render () {
@@ -17,7 +17,7 @@ const blok = {
     const id = url.id
 
     const initial = getInitial(id)
-
+    document.title = `Restlater | Blok ${initial} Slots`
     $('#blok-container').append(`
       <div id='blok-header'>
        <h1>BLOK ${initial} SLOTS</h1>
@@ -83,11 +83,12 @@ const slotsConfirmation = (price, selected) => {
   if (selected.length) {
     console.log(selected)
     $('#confirm-button').css('background-color', '#FFB830')
-    $('#cconfirm-button').css('cursor', 'pointer')
+    $('#confirm-button').css('cursor', 'pointer')
   }
 
   $('#confirm-button').click(function () {
-    getVariables(selected, price)
+    getPaymentDetail(selected, total)
+    $('#confirm-button').css('filter', 'brightness(120%)')
   })
 }
 

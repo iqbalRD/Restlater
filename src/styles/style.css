@@ -341,9 +341,35 @@ footer {
   font-size: 1rem;
   font-weight: 700;
   transition: all .2s ease-in-out;
+}   
+
+#payment-container {
+  margin: 3rem 20rem;
 }
 
+#payment-container h1 {
+  font-weight: 200;
+  text-align: center;
+}
 
+.payment-profile-content {
+  margin: 1.5rem 0;
+}
 
+#payment-profile h3 {
+  color: #3DB2FF;
+  font-weight: 700;
+}
 
+.payment-profile-item {
+  display: flex;
+  font-weight: 300;
+  margin: 1rem 0;
+  padding: .3rem 0;
+  border-bottom: .5px solid rgba(4, 4, 4, 0.204);
+}
 
+.payment-profile-item *:first-child {
+  flex-basis: 20%;
+  font-weight: 500;
+}
