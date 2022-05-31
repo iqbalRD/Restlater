@@ -1,6 +1,6 @@
 const grave = {
   blokA: [
-    { id: 'A1', available: false },
+    { id: 'A1', available: false, price: 5000000 },
     { id: 'A2', available: false },
     { id: 'A3', available: false },
     { id: 'A4', available: false },

@@ -52,6 +52,9 @@
   #reason, #blok {
     margin: 3rem 1rem;
   }
+  #blok-container {
+    text-align: center;
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -85,5 +88,8 @@
   }
   .triangle {
     border-width: 173.2px 100px 0 100px;
+  }
+  #slot-content, #slot-confirm {
+    margin: 3rem 0;
   }
 }
