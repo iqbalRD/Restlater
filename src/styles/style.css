@@ -470,7 +470,7 @@ footer {
   display: none;
   border-radius: 10px;
   background-color: white;
-  width: 25%;
+  max-width: 480px;
   padding: 2rem;
   text-align: center;
   transform: translateY(-20px);
