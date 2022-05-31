@@ -3,6 +3,7 @@ import getInitial from '../../utils/get-blok-initial'
 
 const home = {
   render () {
+    document.title = 'Restlater | Reserve your own future'
     return `
     <section id='hero'>
       <img src="./images/logo-large.png" alt="Restlater Logo" height='400px'>
