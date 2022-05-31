@@ -92,4 +92,13 @@
   #slot-content, #slot-confirm {
     margin: 3rem 0;
   }
+  .payment-profile-item *:first-child {
+    flex-basis: 50%;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  #payment-container {
+    margin: 3rem 10%;
+  }
 }

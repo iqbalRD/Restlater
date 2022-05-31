@@ -1,9 +1,10 @@
 import userAccount from '../../data/user-account'
+import popupInit from '../../utils/confirmation-popup'
+import getDate from '../../utils/date-init'
 
-let paymentDetail = null
-
-const getPaymentDetail = (slots, price) => {
-  paymentDetail = { slots, price }
+const getPaymentDetail = (slots, price, initial) => {
+  const paymentDetail = { slots, price, initial }
+  sessionStorage.setItem('detail', JSON.stringify(paymentDetail))
   window.location.hash = '#/payment'
 }
 
@@ -21,8 +22,15 @@ const payment = {
   },
 
   async afterRender () {
-    const profile = userAccount[0]
-    $('#payment-profile').append(`
+    const paymentDetail = JSON.parse(sessionStorage.getItem('detail'))
+    renderProfile(userAccount[0])
+    renderReservation(paymentDetail.initial, paymentDetail.slots)
+    paymentConfirm(paymentDetail.price)
+  }
+}
+
+const renderProfile = (profile) => {
+  $('#payment-profile').append(`
       <h3>Profile</h3>
       <div class='payment-profile-content'>
         <div class='payment-profile-item'>
@@ -42,8 +50,41 @@ const payment = {
           <p>${profile.address}</p>
         </div>
       </div>
+      <button id='payment-profile-edit'>Edit Profile</button>
     `)
-  }
+}
+
+const renderReservation = (initial, slots) => {
+  $('#payment-reservation').append(`
+    <div class='payment-reservation-content'>
+      <h3>Reservation</h3>
+      <p>${getDate()}</p>
+      <h4>BLOK ${initial}</h4>
+      <h5>${insertsComma(slots)}</h5>
+      <div></div>
+    </div>
+    `)
+}
+
+const paymentConfirm = (total) => {
+  $('#payment-confirm').append(`
+    <div class='payment-confirm-content'>
+      <h2>TOTAL PRICE</h2>
+      <h3>${total}</h3>
+      <button id='confirm-button'>CONFIRM PAYMENT</button>
+    </div>
+  `)
+  $('#confirm-button').css({ cursor: 'pointer', 'background-color': '#FFB830' })
+  $('#confirm-button').prop('disabled', false)
+
+  $('#confirm-button').click(() => {
+    popupInit()
+  })
+}
+
+const insertsComma = (array) => {
+  const split = array.join(', ')
+  return split
 }
 
 export { payment, getPaymentDetail }
