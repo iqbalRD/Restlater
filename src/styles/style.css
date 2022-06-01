@@ -529,3 +529,70 @@ input, textarea {
   text-align: center;
   color: #3DB2FF;
 }
+
+.payment-reservation-content h6 {
+  color: #3db2ff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: .3rem;
+  text-align: center;
+  margin-top: .3rem;
+}
+
+#profile-container {
+  margin: 1rem 30%;
+}
+
+#user-profile {
+  display: flex;
+  margin: 3rem 0;
+  box-shadow: 0 4px 7px 3px rgba(0,0,0,.06);
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+#user-profile img {
+  margin-right: 2rem;
+}
+
+#profile-container > h1 {
+  font-weight: 200;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+#user-profile-content > h2 {
+  font-weight: 300;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+#user-profile-content > h3 {
+  font-weight: 900;
+  font-size: 1.8rem;
+}
+
+.profile-transaction {
+  margin: 3rem 0;
+}
+
+#user-profile-content > h4 {
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: #3DB2FF;
+}
+
+#user-profile-content > h5 {
+  font-weight: 200;
+  font-size: 1rem;
+}
+
+#user-profile-content {
+  position: relative;
+}
+
+.profile-edit-button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}

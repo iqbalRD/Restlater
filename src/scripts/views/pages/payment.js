@@ -2,6 +2,7 @@ import userAccount from '../../data/user-account'
 import confirmationPopup from '../../utils/popup/confirmation-popup'
 import getDate from '../../utils/date-init'
 import editProfilePopup from '../../utils/popup/edit-profile-popup'
+import insertsComma from '../../utils/insert-comma'
 
 const getPaymentDetail = (slots, price, initial) => {
   const paymentDetail = { slots, price, initial }
@@ -85,11 +86,6 @@ const paymentConfirm = (total) => {
   $('#confirm-button').click(() => {
     confirmationPopup.popupRender()
   })
-}
-
-const insertsComma = (array) => {
-  const split = array.join(', ')
-  return split
 }
 
 export { payment, getPaymentDetail }

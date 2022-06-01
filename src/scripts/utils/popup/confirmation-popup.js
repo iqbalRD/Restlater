@@ -25,7 +25,7 @@ const confirmationPopup = {
 
     $('#profile-button').click(() => {
       hidePopup()
-      window.location.hash = '/profile'
+      window.location.hash = '#/profile/test'
     })
 
     $(window).on('popstate', function () {
