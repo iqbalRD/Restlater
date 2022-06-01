@@ -455,7 +455,7 @@ footer {
   margin-bottom: .3rem;
 }
 
-.confirmation-popup {
+.popup {
   display: none;
   position: fixed;
   top: 0;
@@ -466,13 +466,12 @@ footer {
   font-family: 'noto sans', sans-serif;
 }
 
-.confirmation-popup-content {
+.popup-content {
   display: none;
   border-radius: 10px;
   background-color: white;
-  max-width: 480px;
+  width: 480px;
   padding: 2rem;
-  text-align: center;
   transform: translateY(-20px);
   transition: all .3s;
 }
@@ -481,11 +480,16 @@ footer {
   margin-bottom: 1.5rem;
 }
 
+
+.confirmation-popup-content {
+  text-align: center;
+}
+
 .confirmation-popup-content h2 {
   font-size: 3rem;
 }
 
-.confirmation-popup-content button {
+.popup-content button {
   background-color: #FFB830;
   color: white;
   border: none;
@@ -499,10 +503,29 @@ footer {
   margin: .5rem 0;
 }
 
-.confirmation-popup-content button:hover {
+.popup-content button:hover {
   filter: opacity(.5);
 }
 
-.confirmation-popup-content__active {
+.popup-content__active {
   transform: translateY(0);
+}
+
+textarea {
+  resize: none;
+}
+
+input, textarea {
+  padding: .5rem 0;
+  border: none;
+  outline: none;
+}
+
+.payment-profile-item:focus-within {
+  border-bottom: 1px solid #3DB2FF;
+}
+
+.edit-profile-popup-content h2 {
+  text-align: center;
+  color: #3DB2FF;
 }

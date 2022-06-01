@@ -1,6 +1,7 @@
 import userAccount from '../../data/user-account'
-import popupInit from '../../utils/confirmation-popup'
+import confirmationPopup from '../../utils/popup/confirmation-popup'
 import getDate from '../../utils/date-init'
+import editProfilePopup from '../../utils/popup/edit-profile-popup'
 
 const getPaymentDetail = (slots, price, initial) => {
   const paymentDetail = { slots, price, initial }
@@ -52,6 +53,10 @@ const renderProfile = (profile) => {
       </div>
       <button id='payment-profile-edit'>Edit Profile</button>
     `)
+
+  $('#payment-profile-edit').on('click', () => {
+    editProfilePopup.popupRender()
+  })
 }
 
 const renderReservation = (initial, slots) => {
@@ -78,7 +83,7 @@ const paymentConfirm = (total) => {
   $('#confirm-button').prop('disabled', false)
 
   $('#confirm-button').click(() => {
-    popupInit()
+    confirmationPopup.popupRender()
   })
 }
 
