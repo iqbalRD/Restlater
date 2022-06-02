@@ -46,6 +46,15 @@
     transition: filter .3s ease-in-out;
     filter: brightness(1);
   }
+  .section-title {
+    width: 100%;
+  }
+  #reason, #blok {
+    margin: 3rem 1rem;
+  }
+  #blok-container {
+    text-align: center;
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -59,5 +68,54 @@
   }
   #right-hero h1 {
     font-size: 1.5rem;
+  }
+  .blok-item:last-child {
+    grid-column-end: auto;
+  }
+  #contact {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  .contact-content {
+    margin: 1rem;
+  }
+  .contact-content h3 {
+    font-size: 1.5rem;
+  }
+  .contact-content h4 {
+    font-size: 1rem;
+  }
+  .triangle {
+    border-width: 173.2px 100px 0 100px;
+  }
+  #slot-content, #slot-confirm {
+    margin: 3rem 0;
+  }
+  .payment-profile-item *:first-child {
+    flex-basis: 50%;
+  }
+  .popup-content {
+    width: 100%;
+    border-radius: 0;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  #payment-container {
+    margin: 3rem 10%;
+  }
+  #profile-container {
+    margin: 1rem 10%;
+  }
+  #user-profile {
+    flex-direction: column;
+  }
+  .profile-edit-button {
+    position: relative;
+    margin: 1rem auto;
+  }
+  #user-profile > img {
+    display: none;
   }
 }
