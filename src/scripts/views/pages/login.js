@@ -1,5 +1,5 @@
 const login = {
-  async render () {
+  async render() {
     return `
       <!-- ======= Breadcrumbs ======= -->
       <section class="breadcrumbs">
@@ -42,7 +42,7 @@ const login = {
           `
   },
 
-  async afterRender () {
+  async afterRender() {
     // Fungsi ini akan dipanggil setelah render()
   }
 }

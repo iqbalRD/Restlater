@@ -1,30 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./style.css">
-  <link rel="stylesheet"
-    href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-  <title>Document</title>
-</head>
-
-<body>
-  <header>
-    <nav>
-      <h1>RESTLATER</h1>
-      <div class='nav-right'>
-        <a href="/">HOME</a>
-        <a href="/login">ABOUT</a>
-        <a href="/about">IQBALRD
-          <small>logout</small>
-        </a>
-      </div>
-    </nav>
-  </header>
-
+const dashboard = {
+  render() {
+    document.title = 'Restlater | Dashboard'
+    return `
   <main>
     <div class="sidebar">
       <div class="sidebar-menu">
@@ -69,10 +46,20 @@
     </div>
 
     <form action="" class="form">
-
     </form>
-
+    
   </main>
-</body>
+          `
+  },
 
-</html>
+  afterRender() {
+    // Fungsi ini akan dipanggil setelah render()
+    $('body').append(`
+    <footer class="footer">
+    @Copyright 2022, Restlater Corporation
+    </footer>
+    `)
+  }
+}
+
+export default dashboard
