@@ -33,12 +33,12 @@ const blok = {
       </div>
     `)
 
-    renderSlots(grave[id], selected)
-    slotsConfirmation(grave.blokA[0].price, selected)
+    renderSlots(grave[id], selected, initial)
+    slotsConfirmation(grave.blokA[0].price, selected, initial)
   }
 }
 
-const renderSlots = (slots, selected) => {
+const renderSlots = (slots, selected, initial) => {
   slots.forEach(slot => {
     let status = 'available'
     let cursor = 'style="cursor: pointer;"'
@@ -64,21 +64,23 @@ const renderSlots = (slots, selected) => {
       }
 
       $(this).toggleClass('selected')
-      slotsConfirmation(grave.blokA[0].price, selected)
+      slotsConfirmation(grave.blokA[0].price, selected, initial)
     }
   })
 }
 
-const slotsConfirmation = (price, selected) => {
+const slotsConfirmation = (price, selected, initial) => {
   const total = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'idr' }).format(
     selected.length * price
   )
 
   $('#slot-confirm').html(`
-    <h2>TOTAL HARGA</h2>
+    <h2>TOTAL PRICE</h2>
     <h3>${total}</h3>
     <button id='confirm-button'>RESERVE NOW</button>
   `)
+
+  $('#confirm-button').prop('disabled', selected.length === 0)
 
   if (selected.length) {
     console.log(selected)
@@ -87,7 +89,7 @@ const slotsConfirmation = (price, selected) => {
   }
 
   $('#confirm-button').click(function () {
-    getPaymentDetail(selected, total)
+    getPaymentDetail(selected, total, initial)
     $('#confirm-button').css('filter', 'brightness(120%)')
   })
 }

@@ -10,6 +10,7 @@ html {
 
 body {
   font-family: 'Noto Sans', sans-serif;
+  overflow-y:overlay;
 }
 
 a {
@@ -341,22 +342,31 @@ footer {
   font-size: 1rem;
   font-weight: 700;
   transition: all .2s ease-in-out;
+  transition: filter .1s ease-in-out;
 }   
 
-#payment-container {
-  margin: 3rem 20rem;
+#confirm-button:hover {
+  filter: opacity(.5);
 }
 
-#payment-container h1 {
+/* ================= PAYMENT ================= */
+
+#payment-container {
+  margin: 1rem 30%;
+}
+
+#payment-container > h1 {
   font-weight: 200;
   text-align: center;
+  margin-bottom: 2rem;
 }
 
-.payment-profile-content {
-  margin: 1.5rem 0;
+#payment-profile {
+  display: flex;
+  flex-flow: column;
 }
 
-#payment-profile h3 {
+#payment-container h3 {
   color: #3DB2FF;
   font-weight: 700;
 }
@@ -367,9 +377,271 @@ footer {
   margin: 1rem 0;
   padding: .3rem 0;
   border-bottom: .5px solid rgba(4, 4, 4, 0.204);
+  flex-direction: column;
+  width: 100%;
 }
 
 .payment-profile-item *:first-child {
-  flex-basis: 20%;
   font-weight: 500;
+  margin-bottom: .5rem;
+}
+
+#payment-profile-edit {
+  background-color: #FFB830;
+  color: white;
+  border: none;
+  padding: .5rem 1rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  width: fit-content;
+  align-self: flex-end;
+  cursor: pointer;
+  transition: filter .1s ease-in-out;
+}
+
+#payment-profile-edit:hover {
+  filter: opacity(.5);
+}
+
+#payment-reservation {
+  margin-top: 2rem;
+}
+
+.payment-reservation-content {
+  box-shadow: 0px 4px 7px 3px rgba(0, 0, 0, 0.06);
+  padding: 1.3rem;
+  border-radius: 10px;
+}
+
+.payment-reservation-content p {
+  font-style: italic;
+  font-weight: 200;
+}
+
+.payment-reservation-content h4 {
+  font-weight: 200;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.payment-reservation-content h5 {
+  font-weight: 600;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.payment-reservation-content div {
+  margin-top: 2rem;
+  border: 1px solid #3DB2FF;
+}
+
+.payment-confirm-content {
+  margin-top: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 7px 3px rgba(0,0,0,.06);
+  padding: 1rem;
+  text-align: center;
+}
+
+.payment-confirm-content h2 {
+  font-size: 1.2rem;
+  font-weight: 200;
+}
+
+.payment-confirm-content h3 {
+  font-size: 1.5rem;
+  color: #3DB2FF;
+  font-weight: 700;
+  margin-bottom: .3rem;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.329);
+  place-items: center;
+  font-family: 'noto sans', sans-serif;
+}
+
+.popup-content {
+  display: none;
+  border-radius: 10px;
+  background-color: white;
+  width: 480px;
+  padding: 2rem;
+  transform: translateY(-20px);
+  transition: all .3s;
+}
+
+.confirmation-popup-content * {
+  margin-bottom: 1.5rem;
+}
+
+
+.confirmation-popup-content {
+  text-align: center;
+}
+
+.confirmation-popup-content h2 {
+  font-size: 3rem;
+}
+
+.popup-content button {
+  background-color: #FFB830;
+  color: white;
+  border: none;
+  padding: .5rem 1rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  width: 100%;
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+  margin: .5rem 0;
+}
+
+.popup-content button:hover {
+  filter: opacity(.5);
+}
+
+.popup-content__active {
+  transform: translateY(0);
+}
+
+textarea {
+  resize: none;
+}
+
+input, textarea {
+  padding: .5rem 0;
+  border: none;
+  outline: none;
+}
+
+.payment-profile-item:focus-within {
+  border-bottom: 1px solid #3DB2FF;
+}
+
+.edit-profile-popup-content h2 {
+  text-align: center;
+  color: #3DB2FF;
+}
+
+.payment-reservation-content h6 {
+  color: #3db2ff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: .3rem;
+  text-align: center;
+  margin-top: .3rem;
+}
+
+/* ================= PROFILE ================= */
+
+#profile-container {
+  margin: 1rem 30%;
+}
+
+#user-profile {
+  display: flex;
+  margin: 3rem 0;
+  box-shadow: 0 4px 7px 3px rgba(0,0,0,.06);
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+#user-profile img {
+  margin-right: 2rem;
+}
+
+#profile-container > h1 {
+  font-weight: 200;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+#user-profile-content > h2 {
+  font-weight: 300;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+#user-profile-content > h3 {
+  font-weight: 900;
+  font-size: 1.8rem;
+}
+
+.profile-transaction {
+  margin: 3rem 0;
+}
+
+#user-profile-content > h4 {
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: #3DB2FF;
+}
+
+#user-profile-content > h5 {
+  font-weight: 200;
+  font-size: 1rem;
+}
+
+#user-profile-content {
+  position: relative;
+}
+
+.profile-edit-button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+/* ================= ABOUT US ================= */
+#about-content {
+  margin: 2rem 10%;
+  text-align: center;
+}
+
+#about-content img {
+  width: 100%;
+}
+
+#about-content * {
+  margin-bottom: 6rem;
+}
+
+#about-content > h1 {
+  font-weight: 200;
+}
+
+#about-content > p {
+  font-weight: 300;
+  font-size: 1.1rem;
+}
+
+/* ================= SCROLL BAR ================= */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  display: none;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #FFB830; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ffb730cc; 
 }

@@ -92,4 +92,30 @@
   #slot-content, #slot-confirm {
     margin: 3rem 0;
   }
+  .payment-profile-item *:first-child {
+    flex-basis: 50%;
+  }
+  .popup-content {
+    width: 100%;
+    border-radius: 0;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  #payment-container {
+    margin: 3rem 10%;
+  }
+  #profile-container {
+    margin: 1rem 10%;
+  }
+  #user-profile {
+    flex-direction: column;
+  }
+  .profile-edit-button {
+    position: relative;
+    margin: 1rem auto;
+  }
+  #user-profile > img {
+    display: none;
+  }
 }
