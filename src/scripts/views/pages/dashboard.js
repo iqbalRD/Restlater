@@ -1,5 +1,5 @@
 const dashboard = {
-  render() {
+  render () {
     document.title = 'Restlater | Dashboard'
     return `
   <main>
@@ -52,7 +52,7 @@ const dashboard = {
           `
   },
 
-  afterRender() {
+  afterRender () {
     // Fungsi ini akan dipanggil setelah render()
     $('body').append(`
     <footer class="footer">
