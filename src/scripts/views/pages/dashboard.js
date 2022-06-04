@@ -1,7 +1,14 @@
 const dashboard = {
-  render() {
-    document.title = 'Restlater | Dashboard'
-    return `
+    <<
+    << << < HEAD
+    render() {
+      ===
+      === =
+      render() {
+          >>>
+          >>> > 12 d55fe1b9664a5eab419d4c56957d3b4dd7f89d
+          document.title = 'Restlater | Dashboard'
+          return `
   <main>
     <div class="sidebar">
       <div class="sidebar-menu">
@@ -50,16 +57,16 @@ const dashboard = {
     
   </main>
           `
-  },
+        },
 
-  afterRender() {
-    // Fungsi ini akan dipanggil setelah render()
-    $('body').append(`
+        afterRender() {
+          // Fungsi ini akan dipanggil setelah render()
+          $('body').append(`
     <footer class="footer">
     @Copyright 2022, Restlater Corporation
     </footer>
     `)
-  }
-}
+        }
+    }
 
-export default dashboard
+    export default dashboard

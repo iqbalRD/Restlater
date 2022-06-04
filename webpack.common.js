@@ -5,6 +5,7 @@ const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
+const { ServiceWorkerPlugin } = require("service-worker-webpack")
 
 module.exports = {
   entry: path.resolve(__dirname, 'src/scripts/index.js'),
@@ -33,6 +34,7 @@ module.exports = {
         }
       ]
     }),
+    new ServiceWorkerPlugin(),
     new FaviconsWebpackPlugin({
       logo: path.resolve(__dirname, 'src/public/images/logo.png')
     }),
