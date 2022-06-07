@@ -650,6 +650,20 @@ textarea {
 
 /* ================= Dashboard ================= */
 
+<<<<<<< HEAD
+=======
+#dashboard {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 2rem;
+  border-radius: 20px;
+  background-color: #3db2ff;
+  color: white;
+  padding: 1rem;
+}
+
+>>>>>>> f1469a99104143dd023337aa99ad922ae504dd45
 
 /*sidebar*/
 .sidebar {

@@ -1,5 +1,9 @@
 const dashboard = {
+<<<<<<< HEAD
   render() {
+=======
+  render () {
+>>>>>>> f1469a99104143dd023337aa99ad922ae504dd45
     document.title = 'Restlater | Dashboard'
     return `
   <main>
@@ -52,7 +56,11 @@ const dashboard = {
           `
   },
 
+<<<<<<< HEAD
   afterRender() {
+=======
+  afterRender () {
+>>>>>>> f1469a99104143dd023337aa99ad922ae504dd45
     // Fungsi ini akan dipanggil setelah render()
     $('body').append(`
     <footer class="footer">
@@ -62,4 +70,8 @@ const dashboard = {
   }
 }
 
+<<<<<<< HEAD
 export default dashboard
+=======
+export default dashboard
+>>>>>>> f1469a99104143dd023337aa99ad922ae504dd45
