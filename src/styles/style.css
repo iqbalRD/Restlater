@@ -650,8 +650,6 @@ textarea {
 
 /* ================= Dashboard ================= */
 
-<<<<<<< HEAD
-=======
 #dashboard {
   position: fixed;
   bottom: 0;
@@ -663,7 +661,6 @@ textarea {
   padding: 1rem;
 }
 
->>>>>>> f1469a99104143dd023337aa99ad922ae504dd45
 
 /*sidebar*/
 .sidebar {
