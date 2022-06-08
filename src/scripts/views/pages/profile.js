@@ -13,6 +13,7 @@ const profile = {
           <div id='user-profile-content'></div>
         </div>
         <div id='user-transaction'></div>
+        <button id='logout'>Logout</button>
       </section>
     `
   },

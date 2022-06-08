@@ -5,6 +5,7 @@ import {
 } from 'firebase/auth'
 import * as firebaseui from 'firebaseui'
 import 'firebaseui/dist/firebaseui.css'
+// import { firebaseConfig } from '../globals/firebase-config'
 
 const firebaseConfig = {
   apiKey: 'AIzaSyANcwEQ08nCcMcm1PMm7LKXGyHyEunqW9k',
@@ -14,6 +15,7 @@ const firebaseConfig = {
   messagingSenderId: '877903835918',
   appId: '1:877903835918:web:a932d64ba282ec58ac9d5f'
 }
+
 // Initialize Firebase
 const app = firebase.initializeApp(firebaseConfig)
 
@@ -25,6 +27,7 @@ const uiConfig = {
       // User successfully signed in.
       // Return type determines whether we continue the redirect automatically
       // or whether we leave that to developer to handle.
+      console.log(authResult)
       return true
     },
     uiShown () {
@@ -34,7 +37,7 @@ const uiConfig = {
   },
   // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
   signInFlow: 'popup',
-  signInSuccessUrl: '/',
+  signInSuccessUrl: '#/profile/test',
   signInOptions: [
     // Leave the lines as is for the providers you want to offer your users.
     firebase.auth.EmailAuthProvider.PROVIDER_ID
@@ -50,60 +53,47 @@ function signinUI () {
 }
 
 const LogoutInitiator = {
-  init ({
-    logout
-  }) {
-    logout.addEventListener('click', this.signOutUser)
-  },
-
   signOutUser () {
     console.log(firebase.auth().currentUser.displayName)
     console.log(getAuth().currentUser.displayName)
     // Sign out of Firebase.
     firebase.auth().signOut()
       .then(() => {
-        console.log('Signed Out')
+        document.location.href = '/'
       })
   }
 }
 
-// const userPicElement = document.getElementById('user-pic');
 const userNameElement = document.getElementById('user-name')
 const signInButtonElement = document.getElementById('login')
-const signOutButtonElement = document.getElementById('logout')
-// const signInSnackbarElement = document.getElementById('must-signin-snackbar');
-
-
-// Returns the signed-in user's display name.
-function getUserName () {
-  return getAuth().currentUser.displayName
-}
+// const signOutButtonElement = document.getElementById('logout')
 
 // Triggers when the auth state change for instance when the user signs-in or signs-out.
 function authStateObserver (user) {
   if (user) {
     // User is signed in!
     // Get the signed-in user's profile pic and name.
-    // const profilePicUrl = getProfilePicUrl();
-    const userName = getUserName()
+    const userName = user.displayName
+    console.log(user)
 
     // Set the user's profile pic and name.
-    // userPicElement.style.backgroundImage = `url(${addSizeToGoogleProfilePic(profilePicUrl)})`;
     userNameElement.textContent = userName
 
     // Show user's profile and sign-out button.
     userNameElement.removeAttribute('hidden')
-    // userPicElement.removeAttribute('hidden');
-    signOutButtonElement.removeAttribute('hidden')
 
     // Hide sign-in button.
     signInButtonElement.setAttribute('hidden', 'true')
+
+    $('#logout').on('click', LogoutInitiator.signOutUser)
+
+    $('#user-name').on('click', () => {
+      window.location.hash = '/profile/' + user.uid
+    })
   } else {
     // User is signed out!
     // Hide user's profile and sign-out button.
     userNameElement.setAttribute('hidden', 'true')
-    // userPicElement.setAttribute('hidden', 'true');
-    signOutButtonElement.setAttribute('hidden', 'true')
 
     // Show sign-in button.
     signInButtonElement.removeAttribute('hidden')
@@ -121,4 +111,4 @@ function isUserSignedIn () {
   return !!getAuth().currentUser
 }
 
-export { signinUI, LogoutInitiator, initFirebaseAuth }
+export { signinUI, LogoutInitiator, initFirebaseAuth, isUserSignedIn, app }
