@@ -14,6 +14,5 @@ $(function () {
   ;(async () => {
     await renderPage()
   })()
-
   swRegister()
 })
