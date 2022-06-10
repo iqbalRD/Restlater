@@ -1,18 +1,22 @@
 import 'regenerator-runtime'
-import renderPage from './views/app'
 import '../styles/style.css'
 import './utils/hamburger-init'
 import '../styles/responsive.css'
 import swRegister from './utils/sw-register'
+import { initFirebaseAuth } from './utils/auth'
+import renderPage from './views/app'
 
 $(function () {
   $(window).on('hashchange', function () {
     ;(async () => {
       await renderPage()
+      initFirebaseAuth()
     })()
   })
+
   ;(async () => {
     await renderPage()
+    initFirebaseAuth()
   })()
 
   swRegister()

@@ -1,6 +1,5 @@
-
-import routes from '../routes/routes'
 import UrlParser from '../routes/url-parser'
+import routes from '../routes/routes'
 
 async function renderPage () {
   const url = UrlParser.parseActiveUrlWithCombiner()
