@@ -6,6 +6,8 @@ import {
 } from '../views/pages/payment'
 import profile from '../views/pages/profile'
 import dashboard from '../views/pages/dashboard'
+import login from '../views/pages/login'
+import register from '../views/pages/register'
 
 const routes = {
   '/': home, // default page
@@ -13,7 +15,9 @@ const routes = {
   '/payment': payment,
   '/profile/:id': profile,
   '/about': about,
-  '/dashboard': dashboard
+  '/dashboard': dashboard,
+  '/login': login,
+  '/register': register
 }
 
 export default routes
