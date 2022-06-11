@@ -854,4 +854,62 @@ textarea {
 #signin {
   display: grid;
   place-items: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.signup-notice {
+  margin: 3rem;
+  background: #3db1ff21;
+  border: #3DB2FF 1px solid;
+  border-radius: 20px;
+  padding: 1rem;
+}
+
+#firebaseui-auth-container {
+  width: 100%;
+}
+
+.firebaseui-container {
+  padding: 1rem;
+  border-radius: 20px;
+  width: 100%;
+}
+
+.firebaseui-title {
+  color: #3DB2FF;
+}
+
+.firebaseui-button {
+  background-color: #3DB2FF !important;
+  color: white !important;
+}
+
+.firebaseui-textfield.mdl-textfield .firebaseui-label:after {
+  background-color: #3DB2FF !important;
+}
+
+.mdl-progress > .progressbar {
+  background-color: #3DB2FF !important;
+}
+
+.mdl-progress > .bufferbar {
+  background-image: linear-gradient(
+          90deg,
+          hsla(0, 0%, 100%, 0.7),
+          hsla(0, 0%, 100%, 0.7)
+      ),
+      linear-gradient(90deg, #3DB2FF, #3DB2FF) !important;
+  z-index: 0;
+  left: 0;
+}
+
+.mdl-progress:not(.mdl-progress--indeterminate) > .auxbar,
+.mdl-progress:not(.mdl-progress__indeterminate) > .auxbar {
+  background-image: linear-gradient(
+          90deg,
+          hsla(0, 0%, 100%, 0.9),
+          hsla(0, 0%, 100%, 0.9)
+      ),
+      linear-gradient(90deg, #3DB2FF, #3DB2FF) !important;
 }
