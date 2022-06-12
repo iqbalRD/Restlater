@@ -1,4 +1,4 @@
-import grave from '../../data/grave-test'
+import grave from '../../data/graveAPI'
 import getInitial from '../../utils/get-blok-initial'
 
 const home = {
@@ -67,11 +67,12 @@ const home = {
     `
   },
 
-  afterRender () {
-    Object.keys(grave).forEach(key => {
+  async afterRender () {
+    const blok = await grave.getAllBlok()
+    Object.keys(blok).forEach(key => {
       const initial = getInitial(key)
-      const all = grave[key].length
-      const unavailable = getUnavailable(grave[key])
+      const all = blok[key].length
+      const unavailable = getUnavailable(blok[key])
       $('#blok-content').append(`
         <div class='blok-item' id='${key}' tabindex='0'>
           <h3>BLOK ${initial}</h3>

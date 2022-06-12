@@ -1,4 +1,4 @@
-import grave from '../../data/grave-test'
+import grave from '../../data/graveAPI'
 import UrlParser from '../../routes/url-parser'
 import getInitial from '../../utils/get-blok-initial'
 import { getPaymentDetail } from './payment'
@@ -11,7 +11,7 @@ const blok = {
     `
   },
 
-  afterRender () {
+  async afterRender () {
     const selected = []
     const url = UrlParser.parseActiveUrlWithoutCombiner()
     const id = url.id
@@ -32,13 +32,14 @@ const blok = {
       <div id='slot-confirm'>
       </div>
     `)
-
-    renderSlots(grave[id], selected, initial)
-    slotsConfirmation(grave.blokA[0].price, selected, initial)
+    const slots = await grave.getBlokById(id)
+    const price = await grave.getPrice()
+    renderSlots(slots, selected, initial, price)
+    slotsConfirmation(price, selected, initial)
   }
 }
 
-const renderSlots = (slots, selected, initial) => {
+const renderSlots = async (slots, selected, initial, price) => {
   slots.forEach(slot => {
     let status = 'available'
     let cursor = 'style="cursor: pointer;"'
@@ -64,7 +65,7 @@ const renderSlots = (slots, selected, initial) => {
       }
 
       $(this).toggleClass('selected')
-      slotsConfirmation(grave.blokA[0].price, selected, initial)
+      slotsConfirmation(price, selected, initial)
     }
   })
 }
