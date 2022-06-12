@@ -55,6 +55,12 @@
   #blok-container {
     text-align: center;
   }
+  #user-profile {
+    padding: 0;
+  }
+  #user-profile-content > h2 {
+    font-size: 1rem;
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -99,6 +105,9 @@
     width: 100%;
     border-radius: 0;
   }
+  #profile-lack {
+    margin: 3rem 0;
+  }
 }
 
 @media screen and (max-width: 1300px) {
@@ -110,6 +119,7 @@
   }
   #user-profile {
     flex-direction: column;
+    margin : 3rem 0;
   }
   .profile-edit-button {
     position: relative;

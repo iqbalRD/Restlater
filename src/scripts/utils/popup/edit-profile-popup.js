@@ -1,3 +1,4 @@
+import user from '../../data/userAPI'
 import hidePopup from './hide-popup'
 import popupInit from './popup-init'
 
@@ -42,9 +43,29 @@ const editProfilePopup = {
       }
     })
 
+    const tempUserData = JSON.parse(sessionStorage.getItem('user'))
+    $('#edit-profile-name').val(tempUserData.displayName)
+    $('#edit-profile-phone').val(tempUserData.phone)
+    $('#edit-profile-address').val(tempUserData.address)
+
     $('#edit-profile-save').click(() => {
-      hidePopup()
       // save to the database
+
+      const userData = {
+        displayName: $('#edit-profile-name').val(),
+        phone: $('#edit-profile-phone').val(),
+        address: $('#edit-profile-address').val()
+      }
+
+      sessionStorage.setItem('user', JSON.stringify({
+        ...tempUserData,
+        ...userData
+      }))
+
+      const newUserData = JSON.parse(sessionStorage.getItem('user'))
+      user.setUserById(newUserData.uid, newUserData)
+      window.location.reload()
+      hidePopup()
     })
 
     $('#edit-profile-cancel').click(() => {

@@ -605,6 +605,17 @@ textarea {
   right: 0;
 }
 
+#profile-lack {
+  font-size: .8rem;
+  margin: 3rem;
+  text-align: center;
+  color: rgb(129, 129, 129);
+  background: #ffb7301e;
+  border: #FFB830 1px solid;
+  border-radius: 20px;
+  padding: 1rem;
+}
+
 #logout {
   background-color: #ffb830;
   border: none;
@@ -859,6 +870,7 @@ textarea {
 }
 
 .signup-notice {
+  font-size: .8rem;
   margin: 3rem;
   background: #3db1ff21;
   border: #3DB2FF 1px solid;
@@ -871,7 +883,7 @@ textarea {
 }
 
 .firebaseui-container {
-  padding: 1rem;
+  /* padding: 1rem; */
   border-radius: 20px;
   width: 100%;
 }
