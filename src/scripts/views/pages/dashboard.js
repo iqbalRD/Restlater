@@ -9,7 +9,7 @@ const dashboard = {
           <li><a href="#" class="active"><span class="las la-igloo"></span><span>Dashboard</span></a>
           </li>
 
-          <li><a href="#"><span class="las la-users"></span><span>Users</span></a>
+          <li><a href="#/dashboard/users"><span class="las la-users"></span><span>Users</span></a>
           </li>
 
           <li class="dropdown1"><a href=""><span class="las la-book"></span>Graves<span id="sub1"
