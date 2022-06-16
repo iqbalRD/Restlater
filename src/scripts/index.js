@@ -6,6 +6,7 @@ import swRegister from './utils/sw-register'
 import './globals/firebase-init'
 import './data/graveAPI'
 import './data/userAPI'
+import './data/transactionAPI'
 import { initFirebaseAuth } from './utils/auth'
 import renderPage from './views/app'
 

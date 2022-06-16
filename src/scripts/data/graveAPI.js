@@ -1,21 +1,7 @@
-import { child, get, push, ref, set } from 'firebase/database'
+import { get, ref } from 'firebase/database'
 import { db } from '../globals/firebase-init'
 
 const grave = {
-  // Get a key
-  newPostKey () {
-    return push(child(ref(db), 'test')).key
-  },
-
-  // const reserve = (db) => {
-  //   set(ref(db, 'blokA/' + 0), {
-  //     available: true,
-  //     id: "A1",
-  //     price: 5000000
-  //   })
-  // }
-  // reserve(db)
-
   async getAllBlok () {
     const bloks = ref(db, 'grave/')
     const snapshot = await get(bloks)

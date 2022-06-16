@@ -1,4 +1,4 @@
-import transaction from '../../data/transaction-test'
+import transaction from '../../data/transactionAPI'
 import user from '../../data/userAPI'
 import UrlParser from '../../routes/url-parser'
 import insertsComma from '../../utils/insert-comma'
@@ -26,7 +26,7 @@ const profile = {
     const userProfile = await getUserData(id)
     renderProfile(userProfile)
     checkData()
-    renderTransaction(userProfile.uid, transaction)
+    renderTransaction(userProfile.uid, await transaction.getTransaction())
   }
 }
 
@@ -54,9 +54,9 @@ const renderTransaction = (id, transaction) => {
     <div class='payment-reservation-content profile-transaction'>
       <h3>Reservation</h3>
       <p>${item.date}</p>
-      <h4>BLOK ${item.graveSlots[0].split('')[0]}</h4>
-      <h5>${insertsComma(item.graveSlots)}</h5>
-      <h6>${item.price}</h6>
+      <h4>BLOK ${item.slots[0].split('')[0]}</h4>
+      <h5>${insertsComma(item.slots)}</h5>
+      <h6>${item.total}</h6>
       <div></div>
     </div>
     `)
@@ -71,10 +71,13 @@ const getUserData = async (id) => {
 }
 
 const checkData = () => {
+  $('#profile-lack').hide()
   if ($('#user-profile-content > h5:nth-child(4)').text() === '-' || $('#user-profile-content > h5:nth-child(5)').text() === '-') {
+    $('#profile-lack').show()
     $('#profile-lack').append(`
       Please fill in your phone number and address to complete your profile in "Edit Profile" button.
     `)
   }
+  $('#profile-lack').hide()
 }
 export default profile
