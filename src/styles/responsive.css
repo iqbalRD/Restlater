@@ -61,6 +61,19 @@
   #user-profile-content > h2 {
     font-size: 1rem;
   }
+  #dashboard-main {
+    padding: .5rem;
+  }
+  #dashboard-container {
+    flex-direction: column-reverse;
+    height: auto;
+  }
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    bottom: 0;
+  }
 }
 
 @media screen and (max-width: 800px) {

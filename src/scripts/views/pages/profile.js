@@ -9,7 +9,7 @@ const profile = {
     return `
       <section id='profile-container'>
         <h1>USER PROFILE</h1>
-        <div id='profile-lack'></div>
+        <div id='profile-lack' hidden></div>
         <div id='user-profile'>
           <img src='./images/user.svg' alt='user profile' height='200px'>
           <div id='user-profile-content'></div>
