@@ -1,6 +1,6 @@
 const register = {
-    async render () {
-      return `
+  async render () {
+    return `
         <div class="container">
         <div class="row">
             <div class="col-md-6 offset-md-3">
@@ -34,15 +34,14 @@ const register = {
         </div>
     </div>
                   `
-    },
-  
-    async afterRender () {
-      // Fungsi ini akan dipanggil setelah render()
-      $('#form-login').click((e) => {
-        document.location.hash = '/login'
-      })
-    }
+  },
+
+  async afterRender () {
+    // Fungsi ini akan dipanggil setelah render()
+    $('#form-login').click((e) => {
+      document.location.hash = '/login'
+    })
   }
-  
-  export default register
-  
+}
+
+export default register
