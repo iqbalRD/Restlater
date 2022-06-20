@@ -6,7 +6,6 @@ import {
   payment
 } from '../views/pages/payment'
 import profile from '../views/pages/profile'
-import register from '../views/pages/register'
 import dashboard from '../views/pages/dashboard'
 import Users from '../utils/dashboard-init/dashboard-users-init'
 
@@ -16,7 +15,6 @@ const routes = {
   '/login': login,
   '/blok/:id': blok,
   '/payment': payment,
-  '/register': register,
   '/profile/:id': profile,
   '/dashboard': dashboard,
   '/users': Users

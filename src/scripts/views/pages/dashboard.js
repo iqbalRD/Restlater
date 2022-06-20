@@ -6,6 +6,8 @@ import { createLayoutDashboard } from '../template dashboard/template-dashboard'
 const dashboard = {
   render () {
     document.title = 'Restlater | Dashboard'
+    $('body').addClass('nav-main')
+    $('#dashboard').hide()
     return createLayoutDashboard()
   },
 
@@ -19,27 +21,22 @@ const dashboard = {
       $('.submenu').slideUp()
     }
     )
-    
-    $('body').append(`
-    <footer class="footer">
-    @Copyright 2022, Restlater Corporation
-    </footer>
-    `)
+
 
     // pindah isian dashboard
-    $('#user-dashboard').on('click', event => {
+    $('#dashboard-user').on('click', event => {
       event.preventDefault()
       Users()
       $('a').classList.remove('.active')
     })
 
-    $('#transaction-dashboard').on('click', event => {
+    $('#dashboard-transaction').on('click', event => {
       event.preventDefault()
       Transactions()
       $('a').classList.remove('.active')
     })
 
-    $('#grave-dashboard').on('click', event => {
+    $('.dropdown1').on('click', event => {
       event.preventDefault()
       Graves()
     })

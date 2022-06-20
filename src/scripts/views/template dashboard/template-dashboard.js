@@ -1,51 +1,65 @@
 const createLayoutDashboard = () => `
-    <div class="sidebar">
-    <div class="sidebar-menu">
-        <ul>
-        <li><a href="#/dashboard" id="default-dashboard"><span class="las la-igloo"></span><span>Dashboard</span></a>
-        </li>
+    <div id='dashboard-container'>
+        <section class="sidebar">
+        <div class="sidebar-menu">
+            <ul>
+            <li>
+                <div class="active">
+                <span class="las la-igloo"></span>
+                <span>Dashboard</span>
+                </div>
+            </li>
 
-        <li><a href="#/dashboard" id="user-dashboard"><span class="las la-users"></span><span>Users</span></a>
-        </li>
+            <li class='menu' id='dashboard-user'>
+                <div><span class="las la-users"></span><span>Users</span></div>
+            </li>
 
-        <li class="dropdown1"><a href="#/dashboard" id="grave-dashboard"><span class="las la-book"></span>Graves<span id="sub1"
-                class="las la-caret-down"></span></a>
+            <li class="dropdown1 menu">
+                <div>
+                <span class="las la-book"></span>
+                Graves
+                <span id="sub1" class="las la-caret-down"></span>
+                </div>
+            </li>
             <ul class="submenu">
-            <li><a href="#">Blok A</a></li>
-            <li><a href="#">Blok B</a></li>
-            <li><a href="#">Blok C</a></li>
-            <li><a href="#">Blok D</a></li>
-            <li><a href="#">Blok E</a></li>
+            <li id='dashboard-blok-a'><div>Blok A</div></li>
+            <li id='dashboard-blok-b'><div>Blok B</div></li>
+            <li id='dashboard-blok-c'><div>Blok C</div></li>
+            <li id='dashboard-blok-d'><div>Blok D</div></li>
+            <li id='dashboard-blok-e'><div>Blok E</d></li>
             </ul>
-        </li>
 
-        <li class="dropdown1"><a href="#/dashboard" id="transaction-dashboard"><span class="las la-shopping-bag"></span>Transactions<span id="sub1"
-                class="las la-caret-down"></span></a>
-            <ul class="submenu">
-            <li><a href="#">List Transaction</a></li>
-            <li><a href="#">Invoice</a></li>
+            <li class='menu' id='dashboard-transaction'>
+            <div>
+                <span class="las la-shopping-bag">
+                </span>
+                Transactions
+            </div>
+            </li>
             </ul>
-        </li>
-        </ul>
-    </div>
-    </div>
+        </div>
+        </section>
 
-    <section class="search">
-    <div class="search-wrapper">
-        <span class="las la-search"></span>
-        <input type="search" placeholder="Search here">
-    </div>
-    </section>
+        <section id="dashboard-main">
+        <div class="search">
+            <div class="search-wrapper">
+            <span class="las la-search"></span>
+            <input type="search" placeholder="Search here">
+            </div>
+        </div>
 
-    <div class="filter">
-    <span>Filter</span><i id="sub2" class="las la-caret-down"></i>
-    </div>
+        <div class="filter">
+            <span>Filter</span><i id="sub2" class="las la-caret-down"></i>
+        </div>
 
-    <div id="list_table" class="list_table"></div>
+        <div id="data-container"><div id="list_table" class="list_table"></div></div>
+        </section>
+
+    </div>
 `
 
 const createDashboardUserTableTemplate = () => `
-<table id="userListTable">
+<table id="userListTable" class='table-data'>
     <tr>
         <th>User ID</th>
         <th>Name</th>
@@ -55,7 +69,7 @@ const createDashboardUserTableTemplate = () => `
 `
 
 const createDashboardTransactionTableTemplate = () => `
-<table id="transactionListTable">
+<table id="transactionListTable" class='table-data'>
 <tr>
     <th>Transaction ID</th>
     <th>User ID</th>
@@ -67,7 +81,7 @@ const createDashboardTransactionTableTemplate = () => `
 </table>
 `
 const createDashboardGravesTableTemplate = () => `
-    <table id="graveListTable">
+    <table id="graveListTable" class='table-data'>
         <tr>
             <th id="graveA">Graves A</th>
             <th id="graveB">Graves B</th>

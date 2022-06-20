@@ -886,7 +886,30 @@ textarea {
 #data-container {
   width: 100%;
   height: 100%;
-  box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 6px 0px 9px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 2rem;
+  overflow: scroll
+}
+
+th {
+  position: sticky;
+}
+
+.table-data {
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+
+.table-data th {
+  text-align: left;
+  padding: 1rem .5rem;
+}
+
+.table-data td {
+  padding: .5rem;
 }
 
 /* ================= SIGNIN ================= */
