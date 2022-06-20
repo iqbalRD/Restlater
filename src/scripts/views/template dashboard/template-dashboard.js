@@ -1,5 +1,6 @@
 const createLayoutDashboard = () => `
     <div id='dashboard-container'>
+        <section class="space"></section>
         <section class="sidebar">
         <div class="sidebar-menu">
             <ul>

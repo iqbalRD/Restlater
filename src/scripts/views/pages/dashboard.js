@@ -22,7 +22,6 @@ const dashboard = {
     }
     )
 
-
     // pindah isian dashboard
     $('#dashboard-user').on('click', event => {
       event.preventDefault()

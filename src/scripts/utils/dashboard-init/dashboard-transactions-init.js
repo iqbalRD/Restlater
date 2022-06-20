@@ -1,23 +1,26 @@
-import transaction from '../../data/transaction-test'
+import transaction from '../../data/transactionAPI'
 import { createDashboardTransactionTableTemplate } from '../../views/template dashboard/template-dashboard'
 
-const Transactions = () => {
-  const renderTransaction = transaction
+const Transactions = async () => {
+  const renderTransaction = await transaction.getTransaction()
   $('#transaction-dashboard').addClass('active')
   $('#list_table').empty()
   $('#list_table').append(createDashboardTransactionTableTemplate())
 
-  renderTransaction.forEach(deal => {
+  renderTransaction.forEach((deal, index) => {
+    if (deal === null) {
+      return undefined
+    }
     $('#transactionListTable').append(`
             <tr>
-                <td>${deal.transactionId}</td>
-                <td>${deal.userId}</td>
-                <td>${deal.graveSlots}</td>
-                <td>${deal.price}</td>
+                <td>${index}</td>
+                <td>${deal.uid}</td>
+                <td>${deal.slots}</td>
+                <td>${deal.total}</td>
                 <td>${deal.date}</td>
                 <td>
-                    <button>Edit</button>
-                    <button>Delete</button>
+                    <button class='edit-button dashboard-button'>Edit</button>
+                    <button class='delete-button dashboard-button'>Delete</button>
                 </td>
             </tr>
         `)
