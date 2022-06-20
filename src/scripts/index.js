@@ -22,6 +22,5 @@ $(function () {
     await renderPage()
     initFirebaseAuth()
   })()
-
   swRegister()
 })

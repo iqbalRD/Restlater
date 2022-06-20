@@ -1,67 +1,12 @@
+import Graves from '../../utils/dashboard-init/dashboard-graves-init'
+import Transactions from '../../utils/dashboard-init/dashboard-transactions-init'
+import Users from '../../utils/dashboard-init/dashboard-users-init'
+import { createLayoutDashboard } from '../template dashboard/template-dashboard'
+
 const dashboard = {
   render () {
     document.title = 'Restlater | Dashboard'
-    $('body').addClass('nav-main')
-    $('#dashboard').hide()
-    return `
-    <div id='dashboard-container'>
-      <section class="sidebar">
-        <div class="sidebar-menu">
-          <ul>
-            <li>
-              <div class="active">
-                <span class="las la-igloo"></span>
-                <span>Dashboard</span>
-              </div>
-            </li>
-
-            <li class='menu'>
-              <div><span class="las la-users"></span><span>Users</span></div>
-            </li>
-
-            <li class="dropdown1 menu">
-              <div>
-                <span class="las la-book"></span>
-                Graves
-                <span id="sub1" class="las la-caret-down"></span>
-              </div>
-            </li>
-            <ul class="submenu">
-            <li><div>Blok A</div></li>
-            <li><div>Blok B</div></li>
-            <li><div>Blok C</div></li>
-            <li><div>Blok D</div></li>
-            <li><div>Blok E</d></li>
-            </ul>
-
-            <li class='menu'>
-            <div>
-              <span class="las la-shopping-bag">
-              </span>
-              Transactions
-            </div>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section id="dashboard-main">
-        <div class="search">
-          <div class="search-wrapper">
-            <span class="las la-search"></span>
-            <input type="search" placeholder="Search here">
-          </div>
-        </div>
-
-        <div class="filter">
-          <span>Filter</span><i id="sub2" class="las la-caret-down"></i>
-        </div>
-
-        <div id="data-container"></div>
-      </section>
-
-    </div>
-          `
+    return createLayoutDashboard()
   },
 
   afterRender () {
@@ -74,6 +19,30 @@ const dashboard = {
       $('.submenu').slideUp()
     }
     )
+    
+    $('body').append(`
+    <footer class="footer">
+    @Copyright 2022, Restlater Corporation
+    </footer>
+    `)
+
+    // pindah isian dashboard
+    $('#user-dashboard').on('click', event => {
+      event.preventDefault()
+      Users()
+      $('a').classList.remove('.active')
+    })
+
+    $('#transaction-dashboard').on('click', event => {
+      event.preventDefault()
+      Transactions()
+      $('a').classList.remove('.active')
+    })
+
+    $('#grave-dashboard').on('click', event => {
+      event.preventDefault()
+      Graves()
+    })
   }
 }
 
