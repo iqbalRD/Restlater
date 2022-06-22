@@ -48,7 +48,12 @@ const renderProfile = (profile) => {
 }
 
 const renderTransaction = (id, transaction) => {
-  const userTransaction = transaction.filter(item => item.uid === id)
+  const userTransaction = transaction.filter(item => {
+    if (item === null) {
+      return false
+    }
+    return item.uid === id
+  })
   userTransaction.forEach(item => {
     $('#user-transaction').append(`
     <div class='payment-reservation-content profile-transaction'>
