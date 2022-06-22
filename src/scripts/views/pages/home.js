@@ -9,7 +9,7 @@ const home = {
       <img src="./images/logo-large.png" alt="Restlater Logo" height='470px' width='420px'>
       <div id='right-hero'>
         <h1>
-          Prepare yourself and your family for the things that will surely come to human life
+          Prepare yourself and your family for the things that will surely come to human life. Reserve a grave that will be yours forever.
         </h1>
         <a href="javascript:;" onclick="document.location.hash='blok';">
           RESERVE NOW
