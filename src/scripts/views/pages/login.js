@@ -2,6 +2,7 @@ import { signinUI } from '../../utils/auth'
 
 const login = {
   async render () {
+    document.title = 'Restlater | Login'
     return `
       <div id="signin">
       <div class='signup-notice'>

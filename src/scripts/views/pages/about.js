@@ -1,5 +1,6 @@
 const about = {
   render () {
+    document.title = 'Restlater | About Us'
     return `
       <section id='about-container'>
         <div id='about-content'>
