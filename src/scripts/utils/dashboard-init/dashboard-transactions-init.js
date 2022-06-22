@@ -20,7 +20,7 @@ const Transactions = async () => {
     }
     const userResult = await user.getUserById(deal.uid)
     $('#transactionListTable').append(`
-            <tr>
+            <tr id='${index}'>
                 <td>${index}</td>
                 <td>${userResult.displayName}</td>
                 <td>${deal.slots}</td>

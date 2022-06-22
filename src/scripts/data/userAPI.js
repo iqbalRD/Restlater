@@ -20,6 +20,10 @@ const user = {
 
   setUserById (id, data) {
     set(ref(db, 'user/' + id), data)
+  },
+
+  removeUserById (id) {
+    set(ref(db, 'user/' + id), null)
   }
 }
 

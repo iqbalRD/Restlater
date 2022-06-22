@@ -20,12 +20,17 @@ const transaction = {
     sessionStorage.removeItem('transaction')
   },
 
+  // slots = ['A12', 'A2']
   setslots (slots, initial) {
     slots.forEach(slot => {
       const index = getIndex(slot)
       set(ref(db, 'grave/' + `blok${initial}` + `/${index}` + '/available'), false)
     })
+  },
+
+  removeTransaction (index) {
+    set(ref(db, 'transaction/' + index), null)
+    sessionStorage.removeItem('transaction')
   }
 }
-
 export default transaction
