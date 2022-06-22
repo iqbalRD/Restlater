@@ -118,7 +118,7 @@
   .sidebar {
     width: 100%;
     height: auto;
-    position: fixed;
+    position: sticky;
     bottom: 0;
   }
   .space {

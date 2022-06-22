@@ -1,11 +1,16 @@
 import user from '../../data/userAPI'
-import { createDashboardUserTableTemplate } from '../../views/template dashboard/template-dashboard'
+import { createDashboardUserTableTemplate, createSearchFilterDataTemplate } from '../../views/template dashboard/template-dashboard'
+import { searchData } from '../search-data'
 
 const Users = async () => {
+  if (!$('#data-container').length) {
+    createSearchFilterDataTemplate()
+  }
   const renderUser = await user.getAllUsers()
   $('#user-dashboard').addClass('active')
   $('#list_table').empty()
   $('#list_table').append(createDashboardUserTableTemplate())
+  searchData()
 
   Object.keys(renderUser).forEach(user => {
     console.log(renderUser[user])

@@ -1,6 +1,5 @@
 const createLayoutDashboard = () => `
     <div id='dashboard-container'>
-        <section class="space"></section>
         <section class="sidebar">
         <div class="sidebar-menu">
             <ul>
@@ -42,11 +41,19 @@ const createLayoutDashboard = () => `
         </section>
 
         <section id="dashboard-main">
+        </section>
+
+    </div>
+`
+
+const createSearchFilterDataTemplate = () => {
+  $('#dashboard-main').append(
+      `
         <div class="search">
-            <div class="search-wrapper">
-            <span class="las la-search"></span>
-            <input type="search" placeholder="Search here">
-            </div>
+        <div class="search-wrapper">
+        <span class="las la-search"></span>
+        <input type="search" id='search-input' placeholder="Search here">
+        </div>
         </div>
 
         <div class="filter">
@@ -54,10 +61,9 @@ const createLayoutDashboard = () => `
         </div>
 
         <div id="data-container"><div id="list_table" class="list_table"></div></div>
-        </section>
-
-    </div>
-`
+      `
+  )
+}
 
 const createDashboardUserTableTemplate = () => `
 <table id="userListTable" class='table-data'>
@@ -73,7 +79,7 @@ const createDashboardTransactionTableTemplate = () => `
 <table id="transactionListTable" class='table-data'>
 <tr>
     <th>Transaction ID</th>
-    <th>User ID</th>
+    <th>User Name</th>
     <th>Booked Graves</th>
     <th>Total Price</th>
     <th>Date</th>
@@ -97,5 +103,6 @@ export {
   createLayoutDashboard,
   createDashboardUserTableTemplate,
   createDashboardTransactionTableTemplate,
-  createDashboardGravesTableTemplate
+  createDashboardGravesTableTemplate,
+  createSearchFilterDataTemplate
 }
