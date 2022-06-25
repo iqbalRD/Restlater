@@ -37,6 +37,7 @@ const uiConfig = {
         sessionStorage.setItem('user', JSON.stringify({ ...userData }))
         user.setUserById(authResult.user.uid, userData)
       }
+      swal('Login', 'Successfully!', 'success')
       window.location.hash = '/profile/' + authResult.user.uid
       return true
     },
@@ -66,9 +67,23 @@ const LogoutInitiator = {
     console.log(firebase.auth().currentUser.displayName)
     console.log(getAuth().currentUser.displayName)
     // Sign out of Firebase.
-    firebase.auth().signOut()
-      .then(() => {
-        document.location.href = '/'
+    swal({
+      title: 'LogOut?',
+      text: ' ',
+      icon: 'warning',
+      buttons: true,
+      dangerMode: true
+    })
+      .then((willLogout) => {
+        if (willLogout) {
+          firebase.auth().signOut()
+            .then(() => {
+              window.location.hash = '/'
+              swal('Logout', 'Successfully!', 'success')
+            })
+        } else {
+          swal('Logout', 'Failed!', 'error')
+        }
       })
   }
 }
