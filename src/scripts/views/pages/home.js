@@ -1,5 +1,7 @@
 import grave from '../../data/graveAPI'
+import { isUserSignedIn } from '../../utils/auth'
 import getInitial from '../../utils/get-blok-initial'
+import noAccountPopup from '../../utils/popup/no_account-popup'
 
 const home = {
   render () {
@@ -87,13 +89,13 @@ const home = {
 
     $('.blok-item').click((e) => {
       const id = e.currentTarget.id
-      document.location.hash = `#/blok/${id}`
+      checkUser(id)
     })
 
     $('.blok-item').on('keydown', (e) => {
       if (e.keyCode === 13) {
         const id = e.currentTarget.id
-        document.location.hash = `#/blok/${id}`
+        checkUser(id)
       }
     })
   }
@@ -101,6 +103,14 @@ const home = {
 
 const getUnavailable = (slots) => {
   return slots.filter(item => item.available === false).length
+}
+
+const checkUser = (id) => {
+  if (!isUserSignedIn()) {
+    noAccountPopup.popupRender()
+    return undefined
+  }
+  document.location.hash = `#/blok/${id}`
 }
 
 export default home

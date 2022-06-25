@@ -33,6 +33,22 @@ const Transactions = async () => {
             </tr>
         `)
   })
+
+  buttonInit()
+  $(document).on('click', '.edit-button', (e) => {
+    const index = e.target.parentElement.parentElement.id
+    console.log(index)
+  })
+}
+
+const buttonInit = () => {
+  console.log($('.dashboard-button'))
+  // Edit & Delete Buttons
+  $('.dashboard-button').on('click', (e) => {
+    // const index = e.target.parentElement.parentElement.id
+    // console.log(index)
+    console.log('asd')
+  })
 }
 
 export default Transactions

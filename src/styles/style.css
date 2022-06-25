@@ -270,6 +270,10 @@ footer {
   margin-bottom: 10px;
 }
 
+#login-required {
+  font-size: 2.5rem;
+}
+
 /* ================= BLOK ================= */
 
 #blok-container {
@@ -366,6 +370,7 @@ footer {
 #confirm-button:hover {
   filter: opacity(.5);
 }
+
 
 /* ================= PAYMENT ================= */
 
@@ -639,7 +644,8 @@ textarea {
   font-weight: 700;
   padding: .5rem 1rem;
   transition: filter .1s ease-in-out;
-  width: 100%
+  width: 100%;
+  margin-bottom: 2rem;
 }
 
 #logout:hover {
@@ -922,6 +928,7 @@ th {
   padding: .3rem;
   border: none;
   color: white;
+  cursor: pointer;
 }
 
 .edit-button {
@@ -930,6 +937,14 @@ th {
 
 .delete-button {
   background-color: #FF2442;
+}
+
+.edit-button:hover {
+  background-color: #3db1ff80;
+}
+
+.delete-button:hover {
+  background-color: #ff244171;
 }
 
 /* ================= SIGNIN ================= */
