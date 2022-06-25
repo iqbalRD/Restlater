@@ -935,6 +935,10 @@ th {
   background-color: #3db2ff;
 }
 
+.submit-button {
+  background-color: #FFB830;
+}
+
 .delete-button {
   background-color: #FF2442;
 }
@@ -945,6 +949,19 @@ th {
 
 .delete-button:hover {
   background-color: #ff244171;
+}
+
+.edit-input {
+  font-family: 'Noto Sans',sans-serif;
+  font-size: .8rem;
+  width: 100%;
+  padding: .5rem;
+  outline: #ccc solid 1px;
+  transition: outline .2s ease-in-out;
+}
+
+.edit-input:focus {
+  outline: #3DB2FF solid 1px;
 }
 
 /* ================= SIGNIN ================= */

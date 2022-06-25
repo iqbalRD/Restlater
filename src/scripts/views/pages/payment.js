@@ -48,11 +48,11 @@ const renderProfile = (profile) => {
         </div>
         <div class='payment-profile-item'>
           <h4>Phone</h4>
-          <p>${profile.phone}</p>
+          <p>${profile.phone ? profile.phone : '-'}</p>
         </div>
         <div class='payment-profile-item'>
           <h4>Address</h4>
-          <p>${profile.address}</p>
+          <p>${profile.address ? profile.address : '-'}</p>
         </div>
       </div>
       <button id='payment-profile-edit'>Edit Profile</button>

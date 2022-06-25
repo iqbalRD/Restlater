@@ -9,15 +9,6 @@ import 'firebaseui/dist/firebaseui.css'
 import firebaseConfig from '../globals/firebase-config'
 import user from '../data/userAPI'
 
-// const firebaseConfig = {
-//   apiKey: 'AIzaSyANcwEQ08nCcMcm1PMm7LKXGyHyEunqW9k',
-//   authDomain: 'formlogin-2a45c.firebaseapp.com',
-//   projectId: 'formlogin-2a45c',
-//   storageBucket: 'formlogin-2a45c.appspot.com',
-//   messagingSenderId: '877903835918',
-//   appId: '1:877903835918:web:a932d64ba282ec58ac9d5f'
-// }
-
 // Initialize Firebase
 const app = firebase.initializeApp(firebaseConfig)
 
@@ -94,12 +85,17 @@ const signInButtonElement = document.getElementById('login')
 // const signOutButtonElement = document.getElementById('logout')
 
 // Triggers when the auth state change for instance when the user signs-in or signs-out.
-function authStateObserver (user) {
-  if (user) {
+async function authStateObserver (userData) {
+  if (userData) {
     // User is signed in!
     // Get the signed-in user's profile pic and name.
-    const userName = user.displayName
-
+    console.log(userData)
+    const userName = userData.displayName
+    if (!sessionStorage.getItem('user')) {
+      const userAPIData = await user.getUserById(userData.uid)
+      console.log(userAPIData)
+      sessionStorage.setItem('user', JSON.stringify({ ...userAPIData }))
+    }
     // Set the user's profile pic and name.
     userNameElement.textContent = userName
 
@@ -112,7 +108,7 @@ function authStateObserver (user) {
     $('#logout').on('click', LogoutInitiator.signOutUser)
 
     $('#user-name').on('click', () => {
-      window.location.hash = '/profile/' + user.uid
+      window.location.hash = '/profile/' + userData.uid
     })
   } else {
     // User is signed out!

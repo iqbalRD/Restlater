@@ -28,9 +28,17 @@ const transaction = {
     })
   },
 
+  freeSlots (slots, initial) {
+    slots.forEach(slot => {
+      const index = getIndex(slot)
+      set(ref(db, 'grave/' + `blok${initial}` + `/${index}` + '/available'), true)
+    })
+  },
+
   removeTransaction (index) {
     set(ref(db, 'transaction/' + index), null)
     sessionStorage.removeItem('transaction')
   }
 }
+
 export default transaction
