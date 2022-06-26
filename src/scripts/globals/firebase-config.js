@@ -1,11 +1,13 @@
-export const firebaseConfig = {
-  apiKey: 'AIzaSyDK-avGxZBRS0l3T9bCTeHz4lIlJRidkEQ',
-  authDomain: 'fir-login-aad66.firebaseapp.com',
+const firebaseConfig = {
+  apiKey: 'AIzaSyBX-I3tKt-4Qf5diyQjNvVC-NIfZrORQQA',
+  authDomain: 'rest-later.firebaseapp.com',
   databaseURL:
-    'https://fir-login-aad66-default-rtdb.asia-southeast1.firebasedatabase.app',
-  projectId: 'fir-login-aad66',
-  storageBucket: 'fir-login-aad66.appspot.com',
-  messagingSenderId: '1021711336851',
-  appId: '1:1021711336851:web:16cbe5dd0353114dde1466',
-  measurementId: 'G-94BS1F5GMZ'
+    'https://rest-later-default-rtdb.asia-southeast1.firebasedatabase.app',
+  projectId: 'rest-later',
+  storageBucket: 'rest-later.appspot.com',
+  messagingSenderId: '787552069019',
+  appId: '1:787552069019:web:6a58547d1f09ed302dad3e',
+  measurementId: 'G-CCYXG9J0KX'
 }
+
+export default firebaseConfig
